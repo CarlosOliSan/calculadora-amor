@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Calculadora do Amor
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="mt-3 ms-3" style="font-size: 20px;">
+    <p>Calcule sua porcentagem com seu amor</p>
+  </div>
+  <div id="container" class="justify-content-center mt-4">
+    <div class="form-group d-flex justify-content-center">
+      <form action="" id="form-nomes">
+        <label>Insira seu nome</label>
+        <br>
+        <input class="form-control" type="text" [(ngModel)]="nome1" name="nome1">
+        <br>
+
+        <label for="">Insira o nome da pessoa amada</label>
+        <br>    
+        <input class="form-control" type="text" [(ngModel)]="nome2" name="nome2">
+
+        <button type="button" class="btn btn-danger mt-3 ms-5" (click)="enviarDados()">Calcular</button>
+
+        <p [class.painel]="calculando" [class.scale-up-center]="!calculando" class="mt-3 text-center" id="resultado">{{ resultado }} % </p>
+        <p id="mensagem">{{ mensagem }}</p>
+        <img [class.d-none]="!imagem" src="../../assets/img/quernamorarcmg.jpg" alt="">
+      </form>
+    </div>
+  </div>
+</ion-content>
