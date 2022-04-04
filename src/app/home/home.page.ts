@@ -37,9 +37,16 @@ export class HomePage {
         else if (this.resultado < 40) this.mensagem = "Acho que ele(a) já tem outro(a)";
         else if (this.resultado < 60) this.mensagem = "Dá pra tentar, mas é mais fácil ser golpe";
         else if (this.resultado < 80) this.mensagem = "Vai que a chance você tem, só falta atitude";
-        else this.imagem = true;
+        else{ 
+          this.imagem = true;
+          this.mensagem = "";
+        }
       }
     );
+    if(this.nome1 == "" || this.nome2 == ""){
+      this.mensagem = "Insira certos os nomes, jaguara";
+      this.resultado = 0;
+    }
   }
   delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
